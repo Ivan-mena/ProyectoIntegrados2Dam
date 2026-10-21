@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">IES Ejemplo · Llaves</string>
+    <!-- Pantalla NFC -->
+    <string name="nfc_screen_title">Escaneo y Búsqueda NFC</string>
+    <string name="nfc_search_label">Buscar llave o código NFC...</string>
+    <string name="nfc_icon_desc">Icono de lectura NFC</string>
+    <string name="nfc_instruction_text">Acerca el dispositivo al tag NFC del aula o pulsa el icono para simular la lectura</string>
+    <string name="nfc_results_title">Resultados de la Búsqueda</string>
+    <string name="key_room_label">Aula</string>
 </resources>
