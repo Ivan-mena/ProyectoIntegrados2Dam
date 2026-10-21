@@ -33,7 +33,7 @@ private val LocalScreenBackground = Color(0xFF0F264A)
 private val LocalOrangeCircle = Color(0xFFF2994A)
 
 @Composable
-fun BuscarLlaveScreen() {
+ fun BuscarLlaveScreen() {
     var searchQuery by remember { mutableStateOf("") }
     var isScanning by remember { mutableStateOf(true) }
 
@@ -46,6 +46,8 @@ fun BuscarLlaveScreen() {
             animation = tween(1000, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
+
+
         label = "scale_anim"
     )
 
