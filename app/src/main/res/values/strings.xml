@@ -1,3 +1,53 @@
 <resources>
-    <string name="app_name">IES Ejemplo · Llaves</string>
+    <string name="app_name">Gestión de Llaves · U-TAD</string>
+
+    <!-- Pantalla de Autenticación (Login) -->
+    <string name="login_institution_name">U-TAD</string>
+    <string name="login_subtitle">Gestión de llaves del centro</string>
+    <string name="login_user_label">Usuario / Correo</string>
+    <string name="login_user_placeholder">profesor@u-tad.com</string>
+    <string name="login_password_label">Contraseña</string>
+    <string name="login_password_placeholder">••••••••</string>
+    <string name="login_button">Acceso</string>
+    <string name="login_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="login_logo_content_description">Logotipo de U-TAD</string>
+    <string name="login_simulated_alert_title">Acceso</string>
+    <string name="login_simulated_alert_message">Bienvenido al sistema de gestión de llaves de U-TAD.</string>
+    <string name="login_simulated_alert_button">Entendido</string>
+
+    <!-- Interfaz de Búsqueda y Lectura NFC -->
+    <string name="nfc_screen_title">Escaneo y Búsqueda NFC</string>
+    <string name="nfc_subtitle">Búsqueda y Lectura NFC de Aulas</string>
+    <string name="nfc_search_label">Buscar llave o código NFC...</string>
+    <string name="nfc_icon_desc">Icono de lectura NFC</string>
+    <string name="nfc_instruction_text">Acerca el dispositivo al tag NFC del aula o pulsa el icono para simular la lectura</string>
+    <string name="nfc_results_title">Resultados de la Búsqueda</string>
+    <string name="key_room_label">Aula</string>
+    <string name="nfc_reader_title">Lector NFC del Aula</string>
+    <string name="nfc_active_badge">NFC Activo</string>
+    <string name="nfc_simulator_badge">Simulador</string>
+    <string name="nfc_instruction_sub">Toca el gráfico interactivo para simular la lectura de la etiqueta NFC del aula</string>
+    <string name="nfc_simulate_selector_title">Simular escaneo de:</string>
+    <string name="nfc_tap_to_scan">TOCA PARA SIMULAR ESCANEO</string>
+    <string name="nfc_scanning_status">ESCANEANDO TAG DEL AULA...</string>
+    <string name="nfc_completed_status">¡LECTURA COMPLETADA!</string>
+    <string name="nfc_error_status">¡ERROR DE LECTURA!</string>
+    <string name="nfc_tag_detected">Tag Detectado (%1$s)</string>
+    <string name="nfc_uid_label">UID Tag NFC: %1$s</string>
+    <string name="nfc_borrow_key">Prestar Llave</string>
+    <string name="nfc_return_key">Devolver Llave</string>
+    <string name="nfc_unknown_tag_title">Etiqueta Desconocida</string>
+    <string name="nfc_unknown_tag_msg">UID: %1$s no asignado a ningún aula.</string>
+    <string name="nfc_retry_button">Reintentar Escaneo</string>
+    <string name="nfc_search_title">Búsqueda de Aulas</string>
+    <string name="nfc_search_field_label">Filtro por nombre o número de aula</string>
+    <string name="nfc_search_placeholder">Ej: 101, Laboratorio, Taller...</string>
+    <string name="nfc_no_results">No se encontraron aulas para \'%1$s\'</string>
+    <string name="nfc_available">Disponible</string>
+    <string name="nfc_borrowed">Prestada</string>
+    <string name="nfc_simulate_btn">Simular NFC</string>
+    <string name="nfc_unknown_tag_option">Tag Desconocido</string>
+    <string name="nfc_tag_unassigned">Sin asignar</string>
+    <string name="nfc_reading_tag_msg">Leyendo etiqueta NFC del aula...</string>
+    <string name="nfc_tag_unknown_center_msg">Etiqueta no registrada en el centro</string>
 </resources>
