@@ -1,4 +1,4 @@
-package com.iesejemplo.llaves
+package com.iesejemplo.llaves.ui.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.iesejemplo.llaves
+package com.iesejemplo.llaves.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -26,19 +26,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.iesejemplo.llaves.ui.theme.*
+import com.iesejemplo.llaves.R
+import com.iesejemplo.llaves.ui.theme.AppLlavesTheme
+import com.iesejemplo.llaves.ui.theme.InkDark
+import com.iesejemplo.llaves.ui.theme.Navy
+import com.iesejemplo.llaves.ui.theme.Orange
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            AppLlavesTheme {
-                LoginScreen()
-            }
-        }
-    }
-}
+
 
 @Composable
 fun LoginScreen() {
