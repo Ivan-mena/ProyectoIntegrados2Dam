@@ -6,7 +6,7 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="BuscarLlaveScreenPreview">
+      <SelectionState runConfigName="PreviewIncidentsScreen">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
