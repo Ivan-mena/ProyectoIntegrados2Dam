@@ -1,10 +1,8 @@
 package com.iesejemplo.llaves
 
-import androidx.compose.animation.core.*
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,7 +18,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -29,30 +26,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.iesejemplo.llaves.ui.theme.AppLlavesTheme
 
-private val LocalScreenBackground = Color(0xFF0F264A)
-private val LocalOrangeCircle = Color(0xFFF2994A)
-
 @Composable
- fun BuscarLlaveScreen() {
+fun BuscarLlaveScreen() {
     var searchQuery by remember { mutableStateOf("") }
-    var isScanning by remember { mutableStateOf(true) }
-
-    // Pulsing animation for the NFC center button when scanning
-    val infiniteTransition = rememberInfiniteTransition(label = "nfc_pulse")
-    val scale by infiniteTransition.animateFloat(
-        initialValue = 1f,
-        targetValue = if (isScanning) 1.08f else 1f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-
-
-        label = "scale_anim"
-    )
+    val screenBackground = Color(0xFF0F264A)
+    val orangeCircle = Color(0xFFF2994A)
 
     Scaffold(
-        containerColor = LocalScreenBackground,
+        containerColor = screenBackground,
         bottomBar = {
             NavigationBar(
                 containerColor = Color.White,
@@ -64,8 +45,8 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
                     selected = false,
                     onClick = { },
                     colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = LocalScreenBackground,
-                        selectedTextColor = LocalScreenBackground,
+                        selectedIconColor = screenBackground,
+                        selectedTextColor = screenBackground,
                         unselectedIconColor = Color.Gray,
                         unselectedTextColor = Color.Gray,
                         indicatorColor = Color.Transparent
@@ -77,8 +58,8 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
                     selected = false,
                     onClick = { },
                     colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = LocalScreenBackground,
-                        selectedTextColor = LocalScreenBackground,
+                        selectedIconColor = screenBackground,
+                        selectedTextColor = screenBackground,
                         unselectedIconColor = Color.Gray,
                         unselectedTextColor = Color.Gray,
                         indicatorColor = Color.Transparent
@@ -90,8 +71,8 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
                     selected = true,
                     onClick = { },
                     colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = LocalScreenBackground,
-                        selectedTextColor = LocalScreenBackground,
+                        selectedIconColor = screenBackground,
+                        selectedTextColor = screenBackground,
                         unselectedIconColor = Color.Gray,
                         unselectedTextColor = Color.Gray,
                         indicatorColor = Color.Transparent
@@ -103,8 +84,8 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
                     selected = false,
                     onClick = { },
                     colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = LocalScreenBackground,
-                        selectedTextColor = LocalScreenBackground,
+                        selectedIconColor = screenBackground,
+                        selectedTextColor = screenBackground,
                         unselectedIconColor = Color.Gray,
                         unselectedTextColor = Color.Gray,
                         indicatorColor = Color.Transparent
@@ -158,7 +139,7 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Center NFC Animation / Concentric circles
+            // Static NFC Concentric circles (no animation)
             Box(
                 modifier = Modifier
                     .size(260.dp)
@@ -181,21 +162,19 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
                 Box(
                     modifier = Modifier
                         .size(140.dp)
-                        .border(1.dp, LocalOrangeCircle.copy(alpha = 0.6f), CircleShape)
+                        .border(1.dp, orangeCircle.copy(alpha = 0.6f), CircleShape)
                 )
-                // Inner orange circle
+                // Inner orange circle (static)
                 Box(
                     modifier = Modifier
                         .size(88.dp)
-                        .scale(scale)
                         .clip(CircleShape)
-                        .background(LocalOrangeCircle)
-                        .clickable { isScanning = !isScanning },
+                        .background(orangeCircle),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         imageVector = Icons.Default.Nfc,
-                        contentDescription = "NFC Scanning Toggle",
+                        contentDescription = "NFC Scanning",
                         tint = Color.White,
                         modifier = Modifier.size(48.dp)
                     )
@@ -206,7 +185,7 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
 
             // Scanning texts
             Text(
-                text = if (isScanning) "Escaneando..." else "Escaneo pausado",
+                text = "Escaneando...",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -225,10 +204,7 @@ private val LocalOrangeCircle = Color(0xFFF2994A)
 
             // Cancel Button
             OutlinedButton(
-                onClick = {
-                    searchQuery = ""
-                    isScanning = true
-                },
+                onClick = { searchQuery = "" },
                 shape = RoundedCornerShape(12.dp),
                 border = BorderStroke(1.dp, Color.White.copy(alpha = 0.6f)),
                 colors = ButtonDefaults.outlinedButtonColors(
