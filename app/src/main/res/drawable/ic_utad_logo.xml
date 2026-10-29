@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Fondo azul U-TAD -->
+    <path
+        android:fillColor="#0066FF"
+        android:pathData="M 18,0 H 82 A 18,18 0 0,1 100,18 V 82 A 18,18 0 0,1 82,100 H 18 A 18,18 0 0,1 0,82 V 18 A 18,18 0 0,1 18,0 Z" />
+
+    <!-- Letra 'U' blanca característica de U-TAD -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 25,26 H 34 V 58 A 16,16 0 0,0 66,58 V 36 H 75 V 58 A 25,25 0 0,1 25,58 Z" />
+</vector>
